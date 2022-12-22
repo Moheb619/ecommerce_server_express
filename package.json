@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "server for ecommerce website developed with angular",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "nodemon index.js"
   },

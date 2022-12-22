@@ -1,6 +1,14 @@
-var mongoose = require("mongoose");
+import mongoose from "mongoose";
 const ProductSchema = new mongoose.Schema({
   name: {
+    type: String,
+    required: true,
+  },
+  short_code: {
+    type: String,
+    required: true,
+  },
+  category: {
     type: String,
     required: true,
   },
@@ -8,21 +16,34 @@ const ProductSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  stock: {
-    type: Number,
-    required: true,
-  },
-  rating: {
-    type: Number,
-    required: true,
-  },
-  details: {
+  description: {
     type: String,
     required: true,
   },
-  tags: {
-    type: [String],
+  image_url: {
+    type: String,
+    required: true,
+  },
+  is_best_achieved: {
+    type: Boolean,
+    required: true,
+  },
+  created_date: {
+    type: String,
+    required: true,
+  },
+  origin: {
+    type: String,
+    required: true,
+  },
+  quantity: {
+    type: Number,
+    required: true,
+  },
+  ratings: {
+    type: Number,
+    required: true,
   },
 });
 
-export default mongoose.model("Product", ProductSchema);
+export default mongoose.model("products", ProductSchema);

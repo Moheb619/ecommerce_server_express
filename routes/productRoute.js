@@ -1,24 +1,12 @@
-var express = require("express");
-var { countByCity, countByType, createHotel, deleteHotel, getHotel, getHotelRooms, getHotels, updateHotel } = require("../controllers/hotel.js");
-var Hotel = require("../models/Hotel.js");
-var { verifyAdmin } = require("../utils/verifyToken.js");
+import express from "express";
+import { getAllProducts, getProductById } from "./../controllers/productController.js";
 const router = express.Router();
 
-//CREATE
-router.post("/", verifyAdmin, createHotel);
+//GET ALL Product
 
-//UPDATE
-router.put("/:id", verifyAdmin, updateHotel);
-//DELETE
-router.delete("/:id", verifyAdmin, deleteHotel);
-//GET
+router.get("/getAllProducts", getAllProducts);
 
-router.get("/find/:id", getHotel);
-//GET ALL
-
-router.get("/", getHotels);
-router.get("/countByCity", countByCity);
-router.get("/countByType", countByType);
-router.get("/room/:id", getHotelRooms);
+// Get Product By Short Code
+router.get("/getProductById/:id", getProductById);
 
 export default router;

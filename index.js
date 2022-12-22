@@ -1,12 +1,12 @@
-var express = require("express");
-var dotenv = require("dotenv");
-var mongoose = require("mongoose");
-var cookieParser = require("cookie-parser");
-var cors = require("cors");
-var bodyParser = require("body-parser");
+import express from "express";
+import dotenv from "dotenv";
+import mongoose from "mongoose";
+import cookieParser from "cookie-parser";
+import cors from "cors";
+import bodyParser from "body-parser";
 
 // import routes start
-// var authRoute = require("./routes/auth.js");
+import productRoute from "./routes/productRoute.js";
 // import routes end
 
 // Initialize express to app
@@ -37,7 +37,7 @@ app.use(bodyParser.json());
 //middlewares use end
 
 // All routes start
-// app.use("/api/auth", authRoute);
+app.use("/api/products", productRoute);
 // All routes end
 
 app.use((err, req, res, next) => {
