@@ -18,3 +18,12 @@ export const getProductById = async (req, res, next) => {
     // next(err);
   }
 };
+export const addProduct = async (req, res, next) => {
+  const newProduct = new Product(req.body);
+  try {
+    const savedProduct = await newProduct.save();
+    res.status(200).json(savedProduct);
+  } catch (err) {
+    next(err);
+  }
+};

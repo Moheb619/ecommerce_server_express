@@ -12,7 +12,7 @@ import productRoute from "./routes/productRoute.js";
 // Initialize express to app
 const app = express();
 
-// Confit environment
+// Config environment
 dotenv.config();
 mongoose.set("strictQuery", true);
 const connect = async () => {
