@@ -7,6 +7,7 @@ import bodyParser from "body-parser";
 
 // import routes start
 import productRoute from "./routes/productRoute.js";
+import cartRoute from "./routes/cartRoute.js";
 // import routes end
 
 // Initialize express to app
@@ -38,6 +39,7 @@ app.use(bodyParser.json());
 
 // All routes start
 app.use("/api/products", productRoute);
+app.use("/api/cart", cartRoute);
 // All routes end
 
 app.use((err, req, res, next) => {
