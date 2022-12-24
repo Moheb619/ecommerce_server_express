@@ -19,10 +19,37 @@ export const addCartItem = async (req, res, next) => {
   }
 };
 
+export const updateCartItem = async (req, res, next) => {
+  try {
+    const updatedCart = await Cart.findByIdAndUpdate(req.params.id, { $set: req.body }, { new: true });
+    res.status(200).json(updatedCart);
+  } catch (err) {
+    next(err);
+  }
+};
+
+export const getCartItemById = async (req, res, next) => {
+  try {
+    const product = await Cart.findById(req.params.id);
+    res.status(200).json(product);
+  } catch (err) {
+    next(err);
+  }
+};
+
 export const deleteCartItem = async (req, res, next) => {
   try {
     await Cart.findByIdAndDelete(req.params.id);
     res.status(200).json("Product has been deleted.");
+  } catch (err) {
+    next(err);
+  }
+};
+
+export const deleteAllCartItem = async (req, res, next) => {
+  try {
+    await Cart.remove({});
+    res.status(200).json("Checkout Successfully.");
   } catch (err) {
     next(err);
   }
