@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "server for ecommerce website developed with angular",
   "main": "index.js",
+  "engines": {
+    "node": "14.x"
+  },
   "type": "module",
   "scripts": {
     "start": "nodemon index.js"
