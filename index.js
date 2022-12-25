@@ -4,7 +4,6 @@ import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import bodyParser from "body-parser";
-import compression from "compression";
 
 // import routes start
 import productRoute from "./routes/productRoute.js";
@@ -37,10 +36,7 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(compression());
 //middlewares use end
-
-app.use(express.static(path.join(__dirname, "public")));
 
 // All routes start
 app.use("/", indexRoute);
