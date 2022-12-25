@@ -4,7 +4,7 @@
   "description": "server for ecommerce website developed with angular",
   "main": "index.js",
   "engines": {
-    "node": "16.17.1"
+    "node": "16.x"
   },
   "type": "module",
   "scripts": {
