@@ -16,7 +16,7 @@ const app = express();
 
 // Config environment
 dotenv.config();
-// mongoose.set("strictQuery", true);
+mongoose.set("strictQuery", true);
 const connect = async () => {
   try {
     await mongoose.connect(process.env.MONGO);
