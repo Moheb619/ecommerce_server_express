@@ -8,6 +8,7 @@ import bodyParser from "body-parser";
 // import routes start
 import productRoute from "./routes/productRoute.js";
 import cartRoute from "./routes/cartRoute.js";
+import indexRoute from "./routes/indexRoute.js";
 // import routes end
 
 // Initialize express to app
@@ -38,6 +39,7 @@ app.use(bodyParser.json());
 //middlewares use end
 
 // All routes start
+app.use("/", indexRoute);
 app.use("/api/products", productRoute);
 app.use("/api/cart", cartRoute);
 // All routes end
